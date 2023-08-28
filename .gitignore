@@ -2,6 +2,14 @@
 /dist
 /node_modules
 
+/db
+
+.env
+
+#TypeORM Migrations
+/src/migrations/ormconfig.ts
+/src/migrations/generated
+
 # Logs
 logs
 *.log
