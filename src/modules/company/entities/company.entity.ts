@@ -1,6 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { RestaurantEntity } from 'src/modules/restaurant/entities';
 import { UserEntity } from 'src/modules/user/entities';
+import { ProviderEntity } from 'src/modules/provider/entities';
 
 @Entity('tbl_tdk_company')
 export class CompanyEntity {
@@ -36,4 +37,7 @@ export class CompanyEntity {
 
   @OneToMany(() => UserEntity, (user) => user.company)
   users: UserEntity[];
+
+  @OneToMany(() => ProviderEntity, (provider) => provider.company)
+  providers: ProviderEntity[];
 }

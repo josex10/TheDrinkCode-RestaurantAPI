@@ -4,7 +4,11 @@ import { IResponseSuccess } from '../models';
 
 @Injectable()
 export class HandlerResponseService {
-  handleError = (error: any, path = 'App Logger') => {
+  handleError = (
+    error: any,
+    path = 'App Logger',
+    messageCode = 'messageGeneralErrorDefault',
+  ) => {
     const logger = new Logger(path);
     logger.error(error);
 
@@ -25,19 +29,26 @@ export class HandlerResponseService {
           path,
           code,
           message,
+          messageCode,
         },
       },
       code,
     );
   };
 
-  handleSuccess = (data: any, code: number, path = 'App'): IResponseSuccess => {
+  handleSuccess = (
+    data: any,
+    code: number,
+    path = 'App',
+    messageCode = 'messageGeneralSuccessDefault',
+  ): IResponseSuccess => {
     return {
       successResponse: {
         timestamp: new Date(),
         path,
         data,
         code,
+        messageCode,
       },
     };
   };

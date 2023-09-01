@@ -13,6 +13,7 @@ import { RoleModule } from './modules/role/role.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { DataSource } from 'typeorm';
 // import { JwtModule, JwtService } from '@nestjs/jwt';
+import { ProviderModule } from './modules/provider/provider.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { DataSource } from 'typeorm';
     CommonModule,
     RoleModule,
     AuthModule,
+    ProviderModule,
   ],
   controllers: [AppController],
   providers: [AppService],

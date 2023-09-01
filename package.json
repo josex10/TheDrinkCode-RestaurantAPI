@@ -20,15 +20,16 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "ts-node ./node_modules/typeorm/cli",
-    "typeorm:run-migrations": "yarn typeorm migration:run -- -d src/migrations/ormconfig.ts",
-    "typeorm:create-migration": "yarn typeorm -- migration:create src/migrations/generated/TDC",
-    "typeorm:generate-migration": "yarn typeorm -- -d src/migrations/ormconfig.ts migration:generate src/migrations/generated/TDC"
+    "typeorm:run": "yarn typeorm migration:run -- -d src/migrations/ormconfig.ts",
+    "typeorm:create": "yarn typeorm -- migration:create src/migrations/generated/TDC",
+    "typeorm:generate": "yarn typeorm -- -d src/migrations/ormconfig.ts migration:generate src/migrations/generated/TDC"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/jwt": "^10.1.0",
+    "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^10.0.0",
     "@types/jsonwebtoken": "^9.0.2",

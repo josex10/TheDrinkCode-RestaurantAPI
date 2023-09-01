@@ -6,4 +6,5 @@ interface IResponseSuccessBody {
   path: string;
   data: any;
   code: number;
+  messageCode: string;
 }
